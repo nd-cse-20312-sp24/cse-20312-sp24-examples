@@ -1,6 +1,7 @@
 // TODO: includes
 #include <stdbool.h>
 #include <stdio.h>
+
 #include "library.h"
 
 #define SIZE 4
@@ -18,9 +19,9 @@
 // }
 
 bool has_duplicates(int *array, size_t n) {
-    for (int i = 0;  i < n;  i++) {
-        for (int j = i + 1;  j < n; j++) {
-            if (array[i]  == array[j]) {
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (array[i] == array[j]) {
                 return true;
             }
         }
@@ -40,4 +41,5 @@ int main() {
     make_random_array(array, SIZE);
     bool result = has_duplicates(array, SIZE);
     puts(result ? "Yeah" : "Nope");
+    return 1;
 }
