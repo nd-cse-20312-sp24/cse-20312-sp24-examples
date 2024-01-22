@@ -18,9 +18,14 @@
 
 bool has_duplicates_slow(int *a, size_t n) 
 {
-    for (int i = 0; i < n;  i++) {
-        for (int j = i+1;  j < n;  j++)
+    for (int i = 0;  i < n;  i++) {
+        for (int j = i+1;  j < n;  j++) {
+            if (a[i] == a[j]) {
+                return true;
+            }
+        }
     }
+    return false;
 }
 
 // O(n)
@@ -31,6 +36,18 @@ bool has_duplicates_slow(int *a, size_t n)
 //         if (a[i] already marked as seen in table) {
 //             return true
 //         }
+//         put mark in table
 //     }
 //     return false
 // }
+
+bool has_duplicates_fast(int *a, size_t n) {
+    bool *seen = malloc(n*n * sizeof(bool));
+    for (int i = 0;  i < n;  i++) {
+        if (seen[a[i]] == true) {
+            return true;
+        }
+        seen[a[i]] = true;
+    }
+    return false;
+}

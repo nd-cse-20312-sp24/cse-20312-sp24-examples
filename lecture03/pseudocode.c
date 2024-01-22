@@ -32,11 +32,9 @@ bool has_duplicates00(int *a, size_t n)
 //     allocate "seen" table
 //     for (each element in a) {
 //         if (it has already been seen in table) {
-//             // deallocate seen table
 //             return true
 //         }
 //     }
-//     // deallocate seen table
 //     return false
 // }
 
