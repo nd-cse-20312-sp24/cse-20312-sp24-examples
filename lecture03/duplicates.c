@@ -4,7 +4,7 @@
 #include "duplicates.h"
 
 // O(n^2)
-// bool has_duplicates00(int *a, size_t n) 
+// bool has_duplicates_slow(int *a, size_t n) 
 // {
 //     for (each element a[i]) {
 //         for (each element a[j] from i+1 to the end) {
@@ -16,7 +16,7 @@
 //     return false
 // }
 
-bool has_duplicates00(int *a, size_t n) 
+bool has_duplicates_slow(int *a, size_t n) 
 {
     for (int i = 0; i < n;  i++) {
         for (int j = i+1;  j < n;  j++)

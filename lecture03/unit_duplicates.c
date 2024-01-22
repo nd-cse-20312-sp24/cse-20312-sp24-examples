@@ -6,11 +6,11 @@
 
 
 
-int test00_has_duplicates00() {
+int test00_has_duplicates_slow() {
 
 }
 
-int test01_has_duplicates01() {
+int test01_has_duplicates_fast() {
 
 }
 
