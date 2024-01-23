@@ -6,15 +6,23 @@
 
 void dump(int *a, int n) {
     // WRONG: n = sizeof(a) / sizeof(int);
+    printf("[] notation\n");
     for (size_t i = 0; i < n; i++) {
     	printf("%ld. %d\n", i, a[i]);
     }
     
     // POINTERS: only
-    // SENTINEL: for (int *p = a; *p >= 0; p++) {
+    printf("pointer notation\n");
     for (int *p = a; p < (a + n); p++) {
     	printf("%ld. %d\n", p - a, *p);
     }
+
+    // SENTINEL: 
+    printf("sentinel\n");
+    for (int *p = a; *p >= 0; p++) {
+        printf("%ld. %d\n", p - a, *p);
+    }
+
 }
 
 int main(int argc, char *argv[]) {
