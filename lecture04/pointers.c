@@ -13,6 +13,8 @@ int main(int argc, char *argv[])  {
     printf("x = %16d, Address of x = 0x%lx, Size of x = %lu\n", x, (intptr_t)&x, sizeof(x));
     printf("y = %16d, Address of y = 0x%lx, Size of y = %lu\n", y, (intptr_t)&y, sizeof(y));
     printf("p = %16lx, Address of p = 0x%lx, Size of p = %lu\n\n", (intptr_t)p, (intptr_t)&p, sizeof(p));
+    // printf("*p == x ? %d\n", *p == x);
+    // printf("*p == y ? %d\n\n", *p == y);
 
     puts("p = &x");
     p = &x;
