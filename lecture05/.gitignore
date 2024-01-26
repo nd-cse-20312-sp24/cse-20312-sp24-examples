@@ -3,3 +3,6 @@ regions
 regions_sorted
 stack
 str_length
+fgets_chomp
+ptr_vs_array
+string_length
