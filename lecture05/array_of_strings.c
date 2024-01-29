@@ -18,8 +18,8 @@ int main( ) {
     char *str0 = strdup("ab");
     char **array_of_strings = calloc(4, sizeof(char*));
     array_of_strings[0] = str0;
-    array_of_strings[1] = strdup("cd");
-    array_of_strings[2] = strdup("ef");
+    array_of_strings[1] = strdup("cde");
+    array_of_strings[2] = strdup("fg");
 
     puts("---------- print using index notations");
     array_of_strings_print_index(array_of_strings);
