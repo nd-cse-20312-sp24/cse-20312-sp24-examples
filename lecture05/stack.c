@@ -23,15 +23,11 @@ int undef(int x) {
 }
 
 int main() {
-
-    // twice(1);
-    // func(1);
-    // undefined(0);
+    func(4);
 
     /* Memory is not cleared when deallocated, so we can pickup previous values */
-
-    // twice(4);
-    func(4);
+    // TODO: comment undef in and out
     // undef(0);
+
     return EXIT_SUCCESS;
 }

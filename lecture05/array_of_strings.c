@@ -3,18 +3,21 @@
 #include <stdlib.h>
 
 void array_of_strings_print_index(char **aos) {
+    // TODO
     for (int i = 0;  aos[i] != 0;  i++) {
         puts(aos[i]);
     }
 }
 
 void array_of_strings_print_ptr(char **aos) {
+    // TODO
     for (char **p = aos;  *p != 0;  p++) {
         puts(*p);
     }
 }
 
 int main( ) {
+    // TODO
     char *str0 = strdup("ab");
     char **array_of_strings = calloc(4, sizeof(char*));
     array_of_strings[0] = str0;
