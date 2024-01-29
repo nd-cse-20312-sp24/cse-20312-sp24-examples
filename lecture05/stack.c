@@ -26,7 +26,7 @@ int main() {
     func(4);
 
     /* Memory is not cleared when deallocated, so we can pickup previous values */
-    // TODO: comment undef in and out
+    // TODO: comment undef in and out before and after call to func
     // undef(0);
 
     return EXIT_SUCCESS;
