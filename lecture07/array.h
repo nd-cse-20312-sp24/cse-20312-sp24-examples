@@ -9,8 +9,8 @@
 
 typedef struct {
     int	    *data;	// Internal array
-    size_t   capacity;	// Total number of elements
-    size_t   size;	// Number of valid elements
+    int   capacity;	// Total number of elements
+    int   size;	// Number of valid elements
 } Array;
 
 /* Functions */
@@ -18,6 +18,6 @@ typedef struct {
 Array*	array_create();
 void	array_delete(Array *array);
 void	array_append(Array *array, int value);
-int	array_at(Array *array, size_t index);
-ssize_t	array_index(Array *array, int value);
-void	array_insert(Array *array, size_t index, int value);
+int	    array_at(Array *array, int index);
+int	    array_index(Array *array, int value);
+void	array_insert(Array *array, int index, int value);
