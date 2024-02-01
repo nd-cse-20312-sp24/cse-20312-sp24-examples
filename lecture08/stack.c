@@ -4,7 +4,15 @@
 
 /* Functions */
 
-void	stack_push(Stack *s, int value) {
+Stack* stack_create() {
+    return array_create();
+}
+
+void stack_delete(Stack *stack) {
+    array_delete(stack);
+}
+
+void stack_push(Stack *s, int value) {
     array_append(s, value);
 }
 
@@ -18,6 +26,6 @@ int	stack_top(Stack *s) {
     return array_at(s, s->size - 1);
 }
 
-bool	stack_empty(Stack *s) {
+bool stack_empty(Stack *s) {
     return s->size == 0;
 }

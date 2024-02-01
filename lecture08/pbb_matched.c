@@ -1,49 +1,48 @@
 /* Lecture 08: PBB-Matched */
 
-#include "stack.h"
-
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+#include "stack.h"
+
 /* Functions */
 
-bool	is_pbb_matched(const char *s) {
-    Stack *stack  = stack_create();
-    bool   result = false;
+bool is_pbb_matched(char *s) {
+    Stack *stack = stack_create();
 
-    for (const char *c = s; *c; c++) {
-    	if (*c == '(' || *c == '{' || *c == '[') {  // Case: Add opening to stack
-    	    stack_push(stack, *c);
-	} else {				    // Case: Check closing to top of stack
-	    if (stack_empty(stack) ||		    // Case: Handle if more closing than opening
-	    	(*c == ')' && stack_top(stack) != '(') ||
-	    	(*c == '}' && stack_top(stack) != '{') ||
-	    	(*c == ']' && stack_top(stack) != '[')
-	    )
-	    	goto finish;
-
-	    stack_pop(stack);
-	}
+    for (char *c = s; *c; c++) {
+        // if char is an opener, push 
+        if (*c == '{' || *c == '[' || *c == '(') {
+            stack_push(stack, *c);
+        // else if char is a closer that match opener on stack, pop
+        } else if ((*c == '}' && stack_top(stack) == '{') ||
+                   (*c == ']' && stack_top(stack) == '[') ||
+                   (*c == ')' && stack_top(stack) == '(')) {
+            stack_pop(stack);
+        // else no match
+        } else {
+            stack_delete(stack);
+            return false;
+        }
     }
-
-    result = stack_empty(stack);		    // Case: Handle if more opening than closing
-
-finish:
-    stack_delete(stack);
-    return result;
+    if (stack_empty(stack)) {
+        stack_delete(stack);
+        return true;
+    } else {
+        stack_delete(stack);
+        return false;
+    }
 }
 
-/* Main Execution */
-
-int	main(int argc, char *argv[]) {
+int main(int argc, char *argv[]) {
     char buffer[BUFSIZ];
 
     while (fgets(buffer, BUFSIZ, stdin)) {
-    	buffer[strlen(buffer) - 1] = 0;
+        buffer[strlen(buffer) - 1] = 0;
 
-    	puts(is_pbb_matched(buffer) ? "YEAH" : "NOPE");
+        puts(is_pbb_matched(buffer) ? "YEAH" : "NOPE");
     }
 
     return 0;

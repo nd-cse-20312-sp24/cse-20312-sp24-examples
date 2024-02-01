@@ -1,5 +1,5 @@
 CC=		gcc
-CFLAGS=		-Wall -g -std=gnu99 -I../lecture07
+CFLAGS=		-Wall -g -std=gnu99
 LD=		gcc
 LDFLAGS=
 TARGETS=	stack_test pbb_matched
@@ -9,10 +9,10 @@ all:		$(TARGETS)
 %.o:		%.c stack.h
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-stack_test:	stack_test.o stack.o ../lecture07/array.o
+stack_test:	stack_test.o stack.o array.o
 	$(LD) $(LDFLAGS) -o $@ $^
 
-pbb_matched:	pbb_matched.o stack.o ../lecture07/array.o
+pbb_matched:	pbb_matched.o stack.o array.o
 	$(LD) $(LDFLAGS) -o $@ $^
 
 clean:
