@@ -5,9 +5,6 @@
 #include <assert.h>
 #include <string.h>
 
-/* Constants */
-
-const int ARRAY_DEFAULT_CAPACITY = 1 << 2;
 
 /* Functions */
 

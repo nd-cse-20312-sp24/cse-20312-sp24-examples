@@ -5,6 +5,10 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
+/* Constants */
+
+#define ARRAY_DEFAULT_CAPACITY 1 << 2
+
 /* Structure */
 
 typedef struct {

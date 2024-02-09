@@ -1,7 +1,13 @@
+/* Lecture 07: Dynamic Array */
+
 #pragma once
 
 #include <stdbool.h>
 #include <stdlib.h>
+
+/* Constants */
+
+#define ARRAY_DEFAULT_CAPACITY 1 << 2
 
 /* Structure */
 
