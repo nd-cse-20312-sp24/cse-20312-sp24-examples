@@ -80,7 +80,9 @@ void list_insert(List *list, int index, int value) {
         list_push(list, value);
     } else {
         Node *curr = list->head;
-        for (int i = 0;  i < index - 1;  curr = curr->next) {}
+        for (int i = 0;  i < index - 1;  i++) {
+            curr = curr->next;
+        }
         Node *n = node_create(value, curr->next);
         curr->next = n;
     }

@@ -58,9 +58,11 @@ bool test_05_list_index() {
     List* list = list_create();
     list_push(list, 10);
     list_push(list, 20);
-    assert(list_index(list, 20) == 0);
-    assert(list_index(list, 10) == 1);
-    assert(list_index(list, 30) == -1);
+    list_push(list, 30);
+    assert(list_index(list, 30) == 0);
+    assert(list_index(list, 20) == 1);
+    assert(list_index(list, 10) == 2);
+    assert(list_index(list, 40) == -1);
     list_delete(list);
     return(EXIT_SUCCESS);
 }
@@ -69,20 +71,26 @@ bool test_06_list_at() {
     List* list = list_create();
     list_push(list, 10);
     list_push(list, 20);
-    assert(list_at(list, 0) == 20);
-    assert(list_at(list, 1) == 10);
+    list_push(list, 30);
+    assert(list_at(list, 0) == 30);
+    assert(list_at(list, 1) == 20);
+    assert(list_at(list, 2) == 10);
     list_delete(list);
     return(EXIT_SUCCESS);
 }
 
 bool test_07_list_insert() {
     List* list = list_create();
-    list_insert(list, 0, 10);
-    list_insert(list, 1, 20);
-    list_insert(list, 1, 30);
-    assert(list_at(list, 0) == 10);
-    assert(list_at(list, 1) == 30);
-    assert(list_at(list, 2) == 20);
+    list_insert(list, 0, 100);
+    list_insert(list, 1, 103);
+    list_insert(list, 1, 101);
+    list_insert(list, 2, 102);
+    list_insert(list, 4, 104);
+    assert(list_at(list, 0) == 100);
+    assert(list_at(list, 1) == 101);
+    assert(list_at(list, 2) == 102);
+    assert(list_at(list, 3) == 103);
+    assert(list_at(list, 4) == 104);
     list_delete(list);
     return(EXIT_SUCCESS);
 }

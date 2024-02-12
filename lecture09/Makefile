@@ -15,4 +15,4 @@ unit_list:	unit_list.o list.o
 	$(LD) $(LDFLAGS) -o $@ $^
 
 clean:
-	rm -f list_test *.o
+	rm -f unit_list list_test *.o
