@@ -25,7 +25,7 @@ void usage() {
 // Driver program
 int main(int argc, char **argv) {
     char sort_type = 'q';
-    int size = (10);
+    int size = (1 << 16);
     char data = 'r';    // (r)andom, (u)p, (d)own
     bool print = false;
     int argind = 1;
