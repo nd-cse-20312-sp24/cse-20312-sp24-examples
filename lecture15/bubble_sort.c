@@ -24,24 +24,43 @@ void bubble_sort_anim(int *a, int n) {
     printf("compares: %d   swaps: %d\n", compares, swaps);
 }
 
-void bubble_sort_end_early(int *a, int n) {
+void bubble_sort_anim_improved(int *a, int n) {
     int swaps = 0;
     int compares = 0;
-    bool swapped;
-    do {
-        swapped = false;
-        for (int i = 1;  i < n;  i++) {
+    int i = n - 1;
+    while (i >= 1) {
+        int j_last_swap = -1;
+        for (int j = 0;  j < i;  j++) {
             compares++;
-            if (a[i] < a[i - 1]) {
-                swap(&a[i], &a[i - 1]);
+            if (a[j] > a[j+1]) {
+                swap(&a[j], &a[j+1]);
                 swaps++;
-                swapped = true;
-                // dump_array(a, n);
+                j_last_swap = j;
             }
         }
-    } while (swapped);
+        i = j_last_swap;
+    }
     printf("compares: %d   swaps: %d\n", compares, swaps);
 }
+
+// void bubble_sort_end_early(int *a, int n) {
+//     int swaps = 0;
+//     int compares = 0;
+//     bool swapped;
+//     do {
+//         swapped = false;
+//         for (int i = 1;  i < n;  i++) {
+//             compares++;
+//             if (a[i] < a[i - 1]) {
+//                 swap(&a[i], &a[i - 1]);
+//                 swaps++;
+//                 swapped = true;
+//                 // dump_array(a, n);
+//             }
+//         }
+//     } while (swapped);
+//     printf("compares: %d   swaps: %d\n", compares, swaps);
+// }
 
 /* Main Execution */
 
@@ -51,6 +70,7 @@ int main(int argc, char *argv[]) {
     int alen = sizeof(a) / sizeof(int);
 
     // dump_array(a, alen);
-    bubble_sort_end_early(a, alen);
+    bubble_sort_anim_improved(a, alen);
+    // dump_array(a, alen);
     return 0;
 }

@@ -13,7 +13,6 @@ bool binary_search(Array *array, int target) {
     while (start <= end) {
         // Compute midpoint of range
         int middle = (start + end) / 2;
-        printf("start=%d  end=%d  middle=%d\n", start, end, middle);
         int midpoint = array->data[middle];
 
         // Check if target is found
@@ -37,8 +36,12 @@ bool binary_search_r(Array *array, int target, int start, int end) {
 
     // Base case: we found target
     int middle   = (start + end) / 2;
-    printf("start=%d  end=%d  middle=%d\n", start, end, middle);
     int midpoint = array->data[middle];
+    printf("================= stack frame ================\n");
+    printf("&midpoint= %p  midpoint= %2d\n", &midpoint, midpoint);
+    printf("  &middle= %p    middle= %2d\n", &middle, middle);
+    printf("   &start= %p     start= %2d\n", &start, start);
+    printf("     &end= %p       end= %2d\n", &end, end);
     if (midpoint == target)
 	    return true;
 
