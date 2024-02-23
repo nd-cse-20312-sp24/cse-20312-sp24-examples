@@ -1,7 +1,7 @@
 all: sort_driver
 
 %.o: %.c
-	gcc -Wall -std=gnu99 -g -c -o $@ $^
+	gcc -Wall -std=gnu99 -O2 -c -o $@ $^
 
 sort_driver: 	utils.o sort_driver.o \
 				bubblesort.o selectionsort.o insertionsort.o \
