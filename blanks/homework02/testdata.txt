@@ -1,0 +1,2 @@
+apple,dog,banana,cantaloupe,durian,eggplant,fig,grape,fox
+cat,dog,apple,fox,mouse,grape,iguana,tiger,chipmunk,lion,squirrel,durian
