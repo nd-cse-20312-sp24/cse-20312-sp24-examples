@@ -1,7 +1,6 @@
 /* map_test.c: Map Test */
 
 #include "map.h"
-
 #include <stdio.h>
 
 /* Main Execution */
@@ -9,19 +8,19 @@
 int main(int argc, char *argv[]) {
     Map *m = map_create();
 
-    map_insert(m, "apple", 9);
-    map_insert(m, "orange", 3);
-    map_insert(m, "banana" , 4);
-    map_insert(m, "grape", 1);
+    map_insert(m, "taylor", 9);
+    map_insert(m, "olivia", 3);
+    map_insert(m, "chief" , 4);
+    map_insert(m, "justin", 1);
 
     map_format(m);
 
-    printf("map_lookup(%s) = %d\n", "apple", map_lookup(m, "apple"));
-    printf("map_lookup(%s) = %d\n", "orange", map_lookup(m, "orange"));
-    printf("map_lookup(%s) = %d\n", "banana" , map_lookup(m, "banana"));
-    printf("map_lookup(%s) = %d\n", "grape", map_lookup(m, "grape"));
+    printf("map_lookup(%s) = %d\n", "taylor", map_lookup(m, "taylor"));
+    printf("map_lookup(%s) = %d\n", "olivia", map_lookup(m, "olivia"));
+    printf("map_lookup(%s) = %d\n", "chief" , map_lookup(m, "chief"));
+    printf("map_lookup(%s) = %d\n", "justin", map_lookup(m, "justin"));
 
-    printf("map_lookup(%s) = %d\n", "peach", map_lookup(m, "peach"));
+    printf("map_lookup(%s) = %d\n", "smiths", map_lookup(m, "smiths"));
 
     map_delete(m);
     return 0;
