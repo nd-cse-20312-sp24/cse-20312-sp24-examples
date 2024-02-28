@@ -79,8 +79,8 @@ void list_print(Node *head) {
  * Make sure that both the left and right subtrees are proper linked lists terminated
  * by null pointers
  * 
- * The unit tests assume that if there is an odd number of nodes, then the left subtree
- * will be 1 node longer that the right subtree and if there is an even number of nodes
+ * The unit tests assume that if there is an odd number of nodes, then the right subtree
+ * will be 1 node longer than the left subtree and if there is an even number of nodes
  * then the left and right subtrees will be the same length.  This should happen naturally if
  * you follow the fast/slow pointer chasing approach described above.
  * 

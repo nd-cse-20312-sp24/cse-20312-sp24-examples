@@ -33,6 +33,10 @@ void table_insert(Table *t, int value) {
 
     // Linear probing
     int bucket = table_locate(t, value);
+    if (bucket == -1) {
+        puts("table full, can't insert");
+        exit(EXIT_FAILURE);
+    }
     t->buckets[bucket] = value;
 
     t->size++;
@@ -45,8 +49,7 @@ bool table_search(Table *t, int value) {
 
     // Linear probing
     int bucket = table_locate(t, value);
-    // return (bucket >= 0) && 
-    //        (t->buckets[bucket] == value);
+
     return (bucket >= 0);
 }
 
