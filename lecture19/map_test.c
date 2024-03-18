@@ -20,7 +20,7 @@ int main(int argc, char *argv[]) {
     printf("map_lookup(%s) = %d\n", "chief" , map_lookup(m, "chief"));
     printf("map_lookup(%s) = %d\n", "justin", map_lookup(m, "justin"));
 
-    printf("map_lookup(%s) = %d\n", "smiths", map_lookup(m, "smiths"));
+    printf("map_lookup(%s) = %d\n", "knute", map_lookup(m, "knute"));
 
     map_delete(m);
     return 0;
