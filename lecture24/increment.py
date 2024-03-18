@@ -5,3 +5,4 @@ def increment(n: int, amount: int = 1) -> int:
 
 increment(0)
 increment('s')
+pass
