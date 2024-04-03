@@ -41,7 +41,6 @@ def main() -> None:
         strs = line.split()             # Separate individual strings in line
         ints = [int(s) for s in strs]   # Convert each string into an int and collec into list
         tree = tree_read(ints)
-
         print(tree)
 
 if __name__ == '__main__':
