@@ -21,16 +21,17 @@ def tree_values1(root: Optional[Node]) -> list[str]:
         tree_values1(root.left) + [root.value] + tree_values1(root.right)
     )
 
-def tree_values2(root: Optional[Node]) -> Iterator[str]:
-    if not root:
-        return
+# Wrong!!!
+# def tree_values2(root: Optional[Node]) -> Iterator[str]:
+#     if not root:
+#         return
     
-    left_values = tree_values2(root.left)
-    right_values = tree_values2(root.right)
+#     left_values = tree_values2(root.left)
+#     right_values = tree_values2(root.right)
 
-    yield left_values
-    yield root.value
-    yield right_values
+#     yield left_values
+#     yield root.value
+#     yield right_values
 
 # def tree_values2(root: Optional[Node]) -> Iterator[str]:
 #     if not root:
@@ -43,20 +44,20 @@ def tree_values2(root: Optional[Node]) -> Iterator[str]:
 #     yield root.value
 #     for value in right_values: yield value
 
-# def tree_values2(root: Optional[Node]) -> Iterator[str]:
-#     if not root:
-#         return
+def tree_values2(root: Optional[Node]) -> Iterator[str]:
+    if not root:
+        return
     
-#     yield from tree_values2(root.left)
-#     yield root.value
-#     yield from tree_values2(root.right)
+    yield from tree_values2(root.left)
+    yield root.value
+    yield from tree_values2(root.right)
 
 # Main Execution
 
 def main():
     tree = Node('V',
-        Node('A', Node('P'), Node('R')),
-        Node('M', Node('I'), Node('E'))
+        Node('A', Node('P'), Node('I')),
+        Node('M', Node('R'), Node('E'))
     )
 
     # for value in tree_values1(tree):

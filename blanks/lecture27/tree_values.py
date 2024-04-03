@@ -23,8 +23,8 @@ def tree_values2(root: Optional[Node]) -> Iterator[str]:
 
 def main():
     tree = Node('V',
-        Node('A', Node('P'), Node('R')),
-        Node('M', Node('I'), Node('E'))
+        Node('A', Node('P'), Node('I')),
+        Node('M', Node('R'), Node('E'))
     )
 
     for value in tree_values1(tree):
