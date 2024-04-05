@@ -19,12 +19,12 @@ def squares3(numbers):
 # Main Execution
 
 def main():
-    numbers = squares1(range(10))
+    numbers = squares3(range(10))
     for square in numbers:
         print(square)
 
-    print(len(numbers)) # Error!
-    print(numbers[0])   # Error!
+    print('length:     ',   len(numbers)) # Error!
+    print('numbers[0]: ', numbers[0])   # Error!
 
 if __name__ == '__main__':
     main()
