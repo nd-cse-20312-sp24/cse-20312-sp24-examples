@@ -76,6 +76,35 @@ class Tree:
         print(node.value)
         self._print(node.right)
 
+    def _print(self, node: Optional[Node]):
+        ''' Print all nodes in tree (recursively) '''
+        # Base case: Non-existent node
+        if not node:
+            return
+
+        # Recursive: Go left, process node, go right
+        self._print(node.left)
+        print(node.value, end=' ')
+        self._print(node.right)
+
+    def __str__(self) -> str:
+        return self._str(self.root, 0)
+    
+    def _str(self, node: Optional[Node], level: int) -> str:
+        string = ''
+        # Base case: Non-existent node
+        if not node:
+            return string
+
+        # Recursive: Print in order
+        # Note right is printed first so it displays correctly in terminal
+        string += self._str(node.right, level + 1)
+        string += level * '    '
+        string += f"{node.value}\n"
+        string += self._str(node.left, level + 1)
+        return string
+
+
 # Main Execution
 
 def main(stream=sys.stdin):
@@ -91,6 +120,7 @@ def main(stream=sys.stdin):
             tree.insert(number)
 
         tree.print()
+        print(tree)
 
         for number in range(max(ints) + 1): # Search for ints in tree
             print(number, tree.search(number))
