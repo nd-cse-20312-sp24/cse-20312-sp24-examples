@@ -103,12 +103,12 @@ class Treap:
         # Recursive: Go to left or right and update link
         if value < node.value:
             node.left  = self._insert(node.left, value, priority)
-            if node.left.priority > node.priority:
-                node = self.rotate_right(node)
+            # if node.left.priority > node.priority:
+            #     node = self.rotate_right(node)
         else:
             node.right = self._insert(node.right, value, priority)
-            if node.right.priority > node.priority:
-                node = self.rotate_left(node)
+            # if node.right.priority > node.priority:
+            #     node = self.rotate_left(node)
 
         # Return current node so we can re-link
         return node
