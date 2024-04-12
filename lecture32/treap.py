@@ -157,10 +157,15 @@ def main(stream=sys.stdin):
     #     print(t)
     #     print('----------------------------------')
 
-    for c in 'ABCDEFGHIJKLMNO':
-        t.insert(c, randint(1, 100))
+    nodes = [('A', 1), ('B', 2), ('C', 1), ('D', 3), ('E', 1), ('F', 2), ('G', 1)]
+    for value, priority in nodes:
+        t.insert(value, priority)
     print(t)
-    t.print_inorder()
+
+    # for c in 'ABCDEFGHIJKLMNO':
+    #     t.insert(c, randint(1, 100))
+    # print(t)
+    # t.print_inorder()
 
 
 if __name__ == '__main__':
