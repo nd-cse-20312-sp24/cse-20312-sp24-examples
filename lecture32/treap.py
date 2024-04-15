@@ -103,12 +103,12 @@ class Treap:
         # Recursive: Go to left or right and update link
         if value < node.value:
             node.left  = self._insert(node.left, value, priority)
-            # if node.left.priority > node.priority:
-            #     node = self.rotate_right(node)
+            if node.left.priority > node.priority:
+                node = self.rotate_right(node)
         else:
             node.right = self._insert(node.right, value, priority)
-            # if node.right.priority > node.priority:
-            #     node = self.rotate_left(node)
+            if node.right.priority > node.priority:
+                node = self.rotate_left(node)
 
         # Return current node so we can re-link
         return node
@@ -158,14 +158,14 @@ def main(stream=sys.stdin):
     #     print('----------------------------------')
 
     nodes = [('A', 1), ('B', 2), ('C', 1), ('D', 3), ('E', 1), ('F', 2), ('G', 1)]
-    for value, priority in nodes:
-        t.insert(value, priority)
-    print(t)
-
-    # for c in 'ABCDEFGHIJKLMNO':
-    #     t.insert(c, randint(1, 100))
+    # for value, priority in nodes:
+    #     t.insert(value, priority)
     # print(t)
-    # t.print_inorder()
+
+    for c in 'ABCDEFGHIJKLMNO':
+        t.insert(c, randint(1, 100))
+    print(t)
+    t.print_inorder()
 
 
 if __name__ == '__main__':
