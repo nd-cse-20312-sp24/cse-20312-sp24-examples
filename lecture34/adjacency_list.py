@@ -38,10 +38,17 @@ def read_graph(stream) -> AdjacencyList:
 # Main Execution
 
 def main(stream=sys.stdin) -> None:
-    graph = read_graph(stream)
+    # read a single graph
+    # graph = read_graph(stream)
 
-    for vertex, neighbors in sorted(graph.items()):
-        print(f'{vertex}: {sorted(neighbors)}')
+    # for vertex, neighbors in sorted(graph.items()):
+    #     print(f'{vertex}: {sorted(neighbors)}')
+
+    # read multiple graphs
+    while graph := read_graph(stream):  # := called "walrus"
+
+        for vertex, neighbors in sorted(graph.items()):
+            print(f'{vertex}: {sorted(neighbors)}')
 
 if __name__ == '__main__':
     main()
